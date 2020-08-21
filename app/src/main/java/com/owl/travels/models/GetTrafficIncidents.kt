@@ -22,8 +22,6 @@ public class GetTrafficIncidents(){
 
                 } else {
                     val s = response.body!!.string()
-                    println(response.body!!.string())
-                    println("hi")
                     val doc = Jsoup.parse(s)
                     type=doc.attr("Type")
                     message=doc.attr("Message")
@@ -32,7 +30,7 @@ public class GetTrafficIncidents(){
             }
         }catch(e:Exception){
             println("failure")
-            println(e)
+            println(e.printStackTrace())
         }
     }
 

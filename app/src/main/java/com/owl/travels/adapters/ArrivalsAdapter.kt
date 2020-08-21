@@ -11,7 +11,7 @@ import com.owl.travels.R
 import com.owl.travels.models.GetArrivalTimes
 import com.owl.travels.models.TrainInfo
 
-class ArrivalsAdapter(private val trainInfoList: List<TrainInfo>) : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
+class ArrivalsAdapter(private val trainInfoList: ArrayList<TrainInfo>) : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
     private var context: Context? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
@@ -21,13 +21,13 @@ class ArrivalsAdapter(private val trainInfoList: List<TrainInfo>) : RecyclerView
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val info = trainInfoList[position]
-        holder.stationName.text = "hardcoded"
-        holder.platform1.text="test1"
-        holder.platform2.text="test2"
-        holder.platform3.text="test3"
-        holder.platform4.text="test4"
-        holder.platform5.text="test5"
-        holder.platform6.text="test6"
+        holder.stationName.text = trainInfoList.size.toString()
+        holder.platform1.text= ""
+        holder.platform2.text=""
+        holder.platform3.text=""
+        holder.platform4.text=""
+        holder.platform5.text=""
+        holder.platform6.text=""
     }
 
     override fun getItemCount(): Int {
@@ -47,7 +47,6 @@ class ArrivalsAdapter(private val trainInfoList: List<TrainInfo>) : RecyclerView
 
         init {
             val timeGetter= GetArrivalTimes()
-
             stationName = view.findViewById(R.id.station_title)
             platform1 = view.findViewById(R.id.platform_1)
             platform2 = view.findViewById(R.id.platform_2)
