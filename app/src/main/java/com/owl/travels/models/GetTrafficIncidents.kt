@@ -1,10 +1,8 @@
 package com.owl.travels.models
 
-import okhttp3.FormBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.jsoup.Jsoup
-import org.jsoup.select.Elements
 
 public class GetTrafficIncidents(){
     public var type:String=""
@@ -32,7 +30,7 @@ public class GetTrafficIncidents(){
             }
         }catch(e:Exception){
             println("failure")
-            println(e)
+            println(e.printStackTrace())
         }
     }
 

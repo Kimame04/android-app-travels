@@ -8,7 +8,15 @@
     <string name="settings_display">Display</string>
     <string name="settings_start_fragment">Select default tab to launch</string>
     <string name="refresh">Refresh</string>
+    <string name="bus_code_enter">Enter the 5-digit bus code here:</string>
+    <string name="bus_search">Search</string>
     <string name="arrivals_spinner_title">Select a train line:</string>
+    <string name="filter">Filter</string>
+    <string name="filter_title">Filter by:</string>
+    <string name="filter_label_1">A-Z</string>
+    <string name="filter_label_2">Z-A</string>
+    <string name="filter_cancel">Cancel</string>
+    <string name="filter_apply">Apply</string>
     <string-array name="settings_start_fragment_list">
         <item>Train Info</item>
         <item>Bus Arrivals</item>

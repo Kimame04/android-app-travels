@@ -6,4 +6,10 @@
         android:title="@string/refresh"
         android:icon="@drawable/ic_baseline_refresh_24"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_train_filter"
+        android:icon="@drawable/ic_baseline_filter_list_24"
+        android:title="@string/filter"
+        app:showAsAction="always"
+        />
 </menu>

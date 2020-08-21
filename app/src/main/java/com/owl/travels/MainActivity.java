@@ -15,19 +15,19 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.owl.travels.fragments.BusArrivalFragment;
-import com.owl.travels.fragments.SettingsFragment;
-import com.owl.travels.fragments.TrafficIncidentFragment;
-import com.owl.travels.fragments.TrainFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
+import com.owl.travels.fragments.BusArrivalFragment;
+import com.owl.travels.fragments.SettingsFragment;
+import com.owl.travels.fragments.TrafficIncidentFragment;
+import com.owl.travels.fragments.TrainFragment;
 import com.squareup.seismic.ShakeDetector;
 
 public class MainActivity extends AppCompatActivity {
     private Context context;
-    private static FrameLayout frameLayout;
+    public static FrameLayout frameLayout;
     private SensorManager sensorManager;
     private ShakeDetector shakeDetector;
     private RelativeLayout relativeLayout;

@@ -1,8 +1,6 @@
 package com.owl.travels.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,18 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.owl.travels.MainActivity;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.owl.travels.R;
+import com.owl.travels.models.GetTrafficIncidents;
 
-import org.json.JSONObject;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class TrafficIncidentFragment extends Fragment {
-    private Context context;
+    private GetTrafficIncidents incidents = new GetTrafficIncidents();
     private static final String url = "http://datamall2.mytransport.sg/ltaodataservice/TrafficIncidents";
 
     @Nullable
@@ -34,44 +30,33 @@ public class TrafficIncidentFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_train, container, false);
         setHasOptionsMenu(true);
         getActivity().setTitle("Traffic Incidents");
-        context = getContext();
-        generateLocalInfo(url);
         return view;
     }
-    private void generateLocalInfo(String url){
-        if(!MainActivity.isConnectedToInternet(getContext()))
-            MainActivity.showNoConnectionSnackBar();
-        else{
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    //try {
-                        Log.d("test", String.valueOf(response));
-                        /*String dorscon = response.getString("dorscon");
-                        String hospitalised = response.getJSONObject("caseData").getString("Hospitalised");
-                        String stable = response.getJSONObject("caseData").getString("Hospitalised (Stable)");
-                        String critical = response.getJSONObject("caseData").getString("Hospitalised (Critical)");
-                        String death = response.getJSONObject("caseData").getString("Death");
-                        String discharged = response.getJSONObject("caseData").getString("Discharged");
-                        String total_cases = response.getJSONObject("caseData").getString("Total Confirmed Cases");
-                        String last_updated = response.getString("lastUpdated");
-                        info.setText("Dorscon level: " + dorscon + "\n" + "Total cases: " + total_cases + "\n"
-                                + "Stable: " + stable + "\n" + "Critical: " + critical + "\n" + "Discharged: " + discharged + "\n"
-                                + "Dead: " + death + "\n" + "Last updated as of:\n" + last_updated + "\n___\n");*/
-                    //} catch (JSONException e) { e.printStackTrace(); }
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) { error.printStackTrace(); }
-            });
-            Volley.newRequestQueue(context).add(jsonObjectRequest);
-        }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        fetchIncidents();
+    }
+
+    private void fetchIncidents(){
+        Runnable runnable = () ->{
+            try{
+                incidents.getService();
+                System.out.println(incidents.getMessage());
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        };
+        ExecutorService es = Executors.newCachedThreadPool();
+        es.execute(runnable);
+        es.shutdown();
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             default:
-                generateLocalInfo(url);
+                fetchIncidents();
+                Snackbar.make(getView(),"Refreshed", BaseTransientBottomBar.LENGTH_SHORT).show();
                 return true;
         }
     }

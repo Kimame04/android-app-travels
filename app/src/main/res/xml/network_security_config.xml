@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">datamall2.mytransport.sg</domain>
+        <domain includeSubdomains="true">trainarrivalweb.smrt.com.sg</domain>
+    </domain-config>
+</network-security-config>
