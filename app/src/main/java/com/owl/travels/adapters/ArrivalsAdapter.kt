@@ -9,9 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.owl.travels.R
 import com.owl.travels.models.GetArrivalTimes
-import com.owl.travels.models.TrainInfo
 
-class ArrivalsAdapter(private val trainInfoList: ArrayList<TrainInfo>) : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
+class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
     private var context: Context? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
@@ -20,18 +19,18 @@ class ArrivalsAdapter(private val trainInfoList: ArrayList<TrainInfo>) : Recycle
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val info = trainInfoList[position]
-        holder.stationName.text = trainInfoList.size.toString()
-        holder.platform1.text= ""
-        holder.platform2.text=""
-        holder.platform3.text=""
-        holder.platform4.text=""
-        holder.platform5.text=""
-        holder.platform6.text=""
+        //val info = timeGetter.trains[position]
+        holder.stationName.text = "test"
+        holder.platform1.text= "Platform 1: N/A"
+        holder.platform2.text="Platform 2: N/A"
+        holder.platform3.text="Platform 3: N/A"
+        holder.platform4.text="PLatform 4: N/A"
+        holder.platform5.text="Platform 5: N/A"
+        holder.platform6.text="Platform 6: N/A"
     }
 
     override fun getItemCount(): Int {
-        return trainInfoList.size
+        return 100
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
@@ -73,6 +72,7 @@ class ArrivalsAdapter(private val trainInfoList: ArrayList<TrainInfo>) : Recycle
                     Thread.sleep(2500)
                 }
             }.start()
+
         }
     }
 }

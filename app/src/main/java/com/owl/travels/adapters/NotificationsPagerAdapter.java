@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.owl.travels.fragments.ServiceAlertFragment;
 import com.owl.travels.fragments.TrainArrivalFragment;
+import com.owl.travels.fragments.TrainServiceFragment;
 
 public class NotificationsPagerAdapter extends FragmentStateAdapter {
     public NotificationsPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
@@ -20,7 +20,7 @@ public class NotificationsPagerAdapter extends FragmentStateAdapter {
             case 0:
                 return new TrainArrivalFragment();
             default:
-                return new ServiceAlertFragment();
+                return new TrainServiceFragment();
         }
     }
 
