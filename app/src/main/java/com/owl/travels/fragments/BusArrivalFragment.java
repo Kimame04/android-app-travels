@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.owl.travels.R;
 
 public class BusArrivalFragment extends Fragment {
@@ -27,6 +28,7 @@ public class BusArrivalFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             default:
+                Snackbar.make(getView(),"Refreshed",Snackbar.LENGTH_SHORT).show();
                 return true;
         }
     }
