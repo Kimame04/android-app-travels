@@ -62,12 +62,10 @@ public class TrainFragment extends Fragment {
                 return true;
         }
     }
-
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.menu_train, menu);
     }
-
     private void generateAlertDialog(Context context, LayoutInflater inflater){
         AlertDialog dialog = new AlertDialog.Builder(context).create();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -92,4 +90,5 @@ public class TrainFragment extends Fragment {
         dialog.setView(view);
         dialog.show();
     }
+
 }
