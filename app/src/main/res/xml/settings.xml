@@ -9,4 +9,12 @@
             android:entryValues="@array/settings_start_fragment_list"
             />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/settings_display">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="settings_animation"
+            android:summaryOff="Turn on for sweeter eye candy"
+            android:summaryOn="Enjoy!"
+            android:title="Animations" />
+    </PreferenceCategory>
 </PreferenceScreen>
