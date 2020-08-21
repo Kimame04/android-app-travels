@@ -4,8 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.SensorManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +27,7 @@ import com.squareup.seismic.ShakeDetector;
 
 public class MainActivity extends AppCompatActivity {
     private Context context;
+    private static FrameLayout frameLayout;
     private SensorManager sensorManager;
     private ShakeDetector shakeDetector;
     private RelativeLayout relativeLayout;
@@ -79,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         shakeDetector.start(sensorManager);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
-
+        frameLayout = findViewById(R.id.fragment_container);
         relativeLayout = findViewById(R.id.main_rl);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         switch (sharedPreferences.getString("settings_startup_fragment", "")) {
@@ -100,5 +105,21 @@ public class MainActivity extends AppCompatActivity {
                 bottomNavigationView.setSelectedItemId(R.id.trains);
                 break;
         }
+    }
+    public static boolean isConnectedToInternet(Context context) {
+        ConnectivityManager cm =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
+    public static void showNoConnectionSnackBar() {
+        final Snackbar snackbar = Snackbar.make(frameLayout, "No Internet Connection", Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction("Ok", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snackbar.dismiss();
+            }
+        });
+        snackbar.show();
     }
 }
