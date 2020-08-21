@@ -8,10 +8,17 @@
     <string name="settings_display">Display</string>
     <string name="settings_start_fragment">Select default tab to launch</string>
     <string name="refresh">Refresh</string>
+    <string name="arrivals_spinner_title">Select a train line:</string>
     <string-array name="settings_start_fragment_list">
         <item>Train Info</item>
         <item>Bus Arrivals</item>
         <item>Traffic Incidents</item>
         <item>Settings</item>
+    </string-array>
+    <string-array name="train_arrivals_lines_list">
+        <item>North-South Line</item>
+        <item>Circle Line</item>
+        <item>East-West Line (Changi)</item>
+        <item>East-West Line (Pasir Ris)</item>
     </string-array>
 </resources>
