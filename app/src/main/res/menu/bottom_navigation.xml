@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/trains"
+        android:icon="@drawable/ic_baseline_train_24"
+        android:title="@string/bottom_nav_trains" />
+    <item
+        android:id="@+id/buses"
+        android:icon="@drawable/ic_baseline_directions_bus_24"
+        android:title="@string/bottom_nav_buses"/>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/bottom_nav_settings" />
+</menu>
