@@ -2,8 +2,10 @@ package com.example.travels;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,5 +73,24 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).setNegativeButton("No", null).show());
         shakeDetector.start(sensorManager);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
+
+        relativeLayout = findViewById(R.id.main_rl);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        switch (sharedPreferences.getString("settings_startup_fragment", "")) {
+            case "Bus Arrivals":
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new BusArrivalFragment()).commitAllowingStateLoss();
+                bottomNavigationView.setSelectedItemId(R.id.buses);
+                break;
+            case "Settings":
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commitAllowingStateLoss();
+                bottomNavigationView.setSelectedItemId(R.id.settings);
+                break;
+            default:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TrainArrivalFragment()).commitAllowingStateLoss();
+                bottomNavigationView.setSelectedItemId(R.id.trains);
+                break;
+        }
     }
 }

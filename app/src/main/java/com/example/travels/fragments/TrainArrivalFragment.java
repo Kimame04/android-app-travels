@@ -16,6 +16,7 @@ public class TrainArrivalFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_train_arrivals, container, false);
+        getActivity().setTitle("Train Arrivals");
         return view;
     }
 }

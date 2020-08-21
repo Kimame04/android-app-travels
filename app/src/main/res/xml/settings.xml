@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/settings_startup">
+        <ListPreference
+            android:key="settings_startup_fragment"
+            android:title="@string/settings_start_fragment"
+            android:entries="@array/settings_start_fragment_list"
+            android:entryValues="@array/settings_start_fragment_list"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>
