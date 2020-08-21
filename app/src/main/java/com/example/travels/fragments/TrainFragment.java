@@ -39,4 +39,5 @@ public class TrainFragment extends Fragment {
                 }).attach();
         return view;
     }
+
 }
