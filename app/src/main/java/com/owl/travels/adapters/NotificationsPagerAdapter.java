@@ -1,12 +1,12 @@
-package com.example.travels.adapters;
+package com.owl.travels.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.travels.fragments.ServiceAlertFragment;
-import com.example.travels.fragments.TrainArrivalFragment;
+import com.owl.travels.fragments.ServiceAlertFragment;
+import com.owl.travels.fragments.TrainArrivalFragment;
 
 public class NotificationsPagerAdapter extends FragmentStateAdapter {
     public NotificationsPagerAdapter(@NonNull FragmentActivity fragmentActivity) {

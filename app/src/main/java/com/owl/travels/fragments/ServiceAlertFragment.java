@@ -1,4 +1,4 @@
-package com.example.travels.fragments;
+package com.owl.travels.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.travels.R;
+import com.owl.travels.R;
 
 public class ServiceAlertFragment extends Fragment {
     private Context context;

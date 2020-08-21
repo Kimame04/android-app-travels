@@ -1,4 +1,4 @@
-package com.example.travels.models;
+package com.owl.travels.models;
 
 public class TrainInfo {
     private String terminus;

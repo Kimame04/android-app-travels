@@ -1,4 +1,4 @@
-package com.example.travels;
+package com.owl.travels;
 
 import org.junit.Test;
 
