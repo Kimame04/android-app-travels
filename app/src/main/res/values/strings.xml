@@ -22,4 +22,110 @@
         <item>East-West Line</item>
         <item>Thomson-East Coast Line</item>
     </string-array>
+    <string-array name="nsl_stations">
+        <item>JUR%Jurong East</item>
+        <item>BBT%Bukit Batok</item>
+        <item>BGB%Bukit Gombak</item>
+        <item>CCK%Choa Chu Kang</item>
+        <item>YWT%Yew Tee</item>
+        <item>KRJ%Kranji</item>
+        <item>MSL%Marsiling</item>
+        <item>WDL%Woodlands</item>
+        <item>ADM%Admiralty</item>
+        <item>SBW%Sembawang</item>
+        <item>CBR%Canberra</item>
+        <item>YIS%Yishun</item>
+        <item>KTB%Khatib</item>
+        <item>YCK%Yio Chu Kang</item>
+        <item>AMK%Ang Mo Kio</item>
+        <item>BSH%Bishan                 </item>
+        <item>BDL%Braddell               </item>
+        <item>TAP%Toa Payoh              </item>
+        <item>NOV%Novena                 </item>
+        <item>NEW%Newton                 </item>
+        <item>ORC%Orchard                </item>
+        <item>SOM%Somerset               </item>
+        <item>DBG%Dhoby Ghaut            </item>
+        <item>CTH%City Hall              </item>
+        <item>RFP%Raffles Place          </item>
+        <item>MRB%Marina Bay             </item>
+        <item>MSP%Marina South Pier      </item>
+    </string-array>
+    <string-array name="ewl_stations">
+        <item>PSR%Pasir Ris              </item>
+        <item>TAM%Tampines               </item>
+        <item>SIM%Simei                  </item>
+        <item>TNM%Tanah Merah            </item>
+        <item>BDK%Bedok                  </item>
+        <item>KEM%Kembangan              </item>
+        <item>EUN%Eunos                  </item>
+        <item>PYL%Paya Lebar             </item>
+        <item>ALJ%Aljunied               </item>
+        <item>KAL%Kallang                </item>
+        <item>LVR%Lavender               </item>
+        <item>BGS%Bugis                  </item>
+        <item>CTH%City Hall              </item>
+        <item>RFP%Raffles Place          </item>
+        <item>TPG%Tanjong Pagar          </item>
+        <item>OTP%Outram Park            </item>
+        <item>TIB%Tiong Bahru            </item>
+        <item>RDH%Redhill                </item>
+        <item>QUE%Queenstown             </item>
+        <item>COM%Commonwealth           </item>
+        <item>BNV%Buona Vista            </item>
+        <item>DVR%Dover                  </item>
+        <item>CLE%Clementi               </item>
+        <item>JUR%Jurong East            </item>
+        <item>CNG%Chinese Garden         </item>
+        <item>LKS%Lakeside               </item>
+        <item>BNL%Boon Lay               </item>
+        <item>PNR%Pioneer                </item>
+        <item>JKN%Joo Koon               </item>
+        <item>GCL%Gul Circle             </item>
+        <item>TCR%Tuas Crescent          </item>
+        <item>TWR%Tuas West Road         </item>
+        <item>TLK%Tuas Link              </item>
+    </string-array>
+    <string-array name="changi_stations">
+        <item>TNM%Tanah Merah</item>
+        <item>XPO%Expo</item>
+        <item>CGA%Changi Airport</item>
+    </string-array>
+    <string-array name="tel_stations">
+        <item>WDN%Woodlands North</item>
+        <item>WDL%Woodlands</item>
+        <item>WDS%Woodlands South</item>
+    </string-array>
+    <string-array name="ccl_stations">
+        <item>DBG%Dhoby Ghaut       </item>
+        <item>BBS%Bras Basah        </item>
+        <item>EPN%Esplanade         </item>
+        <item>PMN%Promenade         </item>
+        <item>NCH%Nicoll Highway    </item>
+        <item>SDM%Stadium           </item>
+        <item>MBT%Mountbatten       </item>
+        <item>DKT%Dakota            </item>
+        <item>PYL%Paya Lebar        </item>
+        <item>MPS%MacPherson        </item>
+        <item>TSG%Tai Seng          </item>
+        <item>BLY%Bartley           </item>
+        <item>SER%Serangoon         </item>
+        <item>LRC%Lorong Chuan      </item>
+        <item>BSH%Bishan            </item>
+        <item>MRM%Marymount         </item>
+        <item>CDT%Caldecott         </item>
+        <item>BTN%Botanic Gardens   </item>
+        <item>FRR%Farrer Road       </item>
+        <item>HLV%Holland Village   </item>
+        <item>BNV%Buona Vista       </item>
+        <item>ONH%one-north         </item>
+        <item>KRG%Kent Ridge        </item>
+        <item>HPV%Haw Par Villa     </item>
+        <item>PPJ%Pasir Panjang     </item>
+        <item>LBD%Labrador Park     </item>
+        <item>TLB%Telok Blangah     </item>
+        <item>HBF%HarbourFront      </item>
+        <item>BFT%Bayfront          </item>
+        <item>MRB%Marina Bay        </item>
+    </string-array>
 </resources>
