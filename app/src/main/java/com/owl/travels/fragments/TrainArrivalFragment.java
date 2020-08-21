@@ -22,6 +22,8 @@ import com.owl.travels.models.TrainInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class TrainArrivalFragment extends Fragment {
     private Context context;
@@ -50,12 +52,24 @@ public class TrainArrivalFragment extends Fragment {
         Spinner spinner = view.findViewById(R.id.arrivals_spinner);
         spinner.setOnItemSelectedListener(onItemSelectedListener);
         recyclerView = view.findViewById(R.id.arrivals_rv);
-        TrainInfo train1 = new TrainInfo(5,"Pasir Ris");
-        testList.add(train1);
-        ArrivalsAdapter arrivalsAdapter = new ArrivalsAdapter(testList);
+        ArrivalsAdapter arrivalsAdapter = new ArrivalsAdapter(TrainInfo.getList());
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(arrivalsAdapter);
         return view;
+    }
+
+    private void fetchArrivals(String name){
+        Runnable runnable = () ->{
+            try{
+                times.refreshFormBody(name);
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        };
+        ExecutorService es = Executors.newCachedThreadPool();
+        es.execute(runnable);
+        es.shutdown();
     }
 }
