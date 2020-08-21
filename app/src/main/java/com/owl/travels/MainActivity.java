@@ -1,4 +1,4 @@
-package com.example.travels;
+package com.owl.travels;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,10 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.example.travels.fragments.BusArrivalFragment;
-import com.example.travels.fragments.SettingsFragment;
-import com.example.travels.fragments.TrafficIncidentFragment;
-import com.example.travels.fragments.TrainFragment;
+import com.owl.travels.fragments.BusArrivalFragment;
+import com.owl.travels.fragments.SettingsFragment;
+import com.owl.travels.fragments.TrafficIncidentFragment;
+import com.owl.travels.fragments.TrainFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.BaseTransientBottomBar;

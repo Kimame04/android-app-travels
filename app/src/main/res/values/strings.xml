@@ -18,7 +18,8 @@
     <string-array name="train_arrivals_lines_list">
         <item>North-South Line</item>
         <item>Circle Line</item>
-        <item>East-West Line (Changi)</item>
-        <item>East-West Line (Pasir Ris)</item>
+        <item>Changi Airport Branch Line</item>
+        <item>East-West Line</item>
+        <item>Thomson-East Coast Line</item>
     </string-array>
 </resources>

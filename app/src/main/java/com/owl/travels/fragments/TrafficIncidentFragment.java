@@ -1,4 +1,4 @@
-package com.example.travels.fragments;
+package com.owl.travels.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -19,8 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.travels.MainActivity;
-import com.example.travels.R;
+import com.owl.travels.MainActivity;
+import com.owl.travels.R;
 
 import org.json.JSONObject;
 
