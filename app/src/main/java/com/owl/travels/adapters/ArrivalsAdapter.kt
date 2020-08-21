@@ -2,7 +2,6 @@ package com.owl.travels.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +22,12 @@ class ArrivalsAdapter(private val trainInfoList: List<TrainInfo>) : RecyclerView
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val info = trainInfoList[position]
         holder.stationName.text = "hardcoded"
+        holder.platform1.text="test1"
+        holder.platform2.text="test2"
+        holder.platform3.text="test3"
+        holder.platform4.text="test4"
+        holder.platform5.text="test5"
+        holder.platform6.text="test6"
     }
 
     override fun getItemCount(): Int {
@@ -32,12 +37,12 @@ class ArrivalsAdapter(private val trainInfoList: List<TrainInfo>) : RecyclerView
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
         val stationName: TextView
-        private val platform1: TextView
-        private val platform2: TextView
-        private val platform3: TextView
-        private val platform4: TextView
-        private val platform5: TextView
-        private val platform6: TextView
+         val platform1: TextView
+         val platform2: TextView
+         val platform3: TextView
+         val platform4: TextView
+         val platform5: TextView
+         val platform6: TextView
         override fun onClick(view: View) {}
 
         init {
