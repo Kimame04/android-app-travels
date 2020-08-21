@@ -10,6 +10,10 @@
         android:icon="@drawable/ic_baseline_directions_bus_24"
         android:title="@string/bottom_nav_buses"/>
     <item
+        android:id="@+id/traffic"
+        android:icon="@drawable/ic_baseline_traffic_24"
+        android:title="@string/bottom_nav_traffic"/>
+    <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="@string/bottom_nav_settings" />

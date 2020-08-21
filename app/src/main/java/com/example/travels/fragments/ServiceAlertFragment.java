@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.travels.R;
 
-public class TrainArrivalFragment extends Fragment {
+public class ServiceAlertFragment extends Fragment {
     private Context context;
     @Nullable
     @Override
