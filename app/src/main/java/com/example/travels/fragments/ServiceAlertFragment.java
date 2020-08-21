@@ -18,6 +18,7 @@ public class ServiceAlertFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bus_arrivals, container, false);
+        setHasOptionsMenu(true);
         getActivity().setTitle("Train Info");
         context = getContext();
         return view;
