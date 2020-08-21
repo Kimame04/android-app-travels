@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">Travels</string>
     <string name="bottom_nav_settings">Settings</string>
-    <string name="bottom_nav_trains">Train Arrivals</string>
+    <string name="bottom_nav_trains">Train Info</string>
     <string name="bottom_nav_buses">Bus Arrivals</string>
+    <string name="bottom_nav_traffic">Traffic Incidents</string>
     <string name="settings_startup">Startup</string>
     <string name="settings_display">Display</string>
     <string name="settings_start_fragment">Select default tab to launch</string>
     <string-array name="settings_start_fragment_list">
-        <item>Train Arrivals</item>
+        <item>Train Info</item>
         <item>Bus Arrivals</item>
+        <item>Traffic Incidents</item>
         <item>Settings</item>
     </string-array>
 </resources>

@@ -13,7 +13,8 @@ import androidx.fragment.app.Fragment;
 
 import com.example.travels.fragments.BusArrivalFragment;
 import com.example.travels.fragments.SettingsFragment;
-import com.example.travels.fragments.TrainArrivalFragment;
+import com.example.travels.fragments.TrafficIncidentFragment;
+import com.example.travels.fragments.TrainFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
@@ -36,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
                         selectedFragment = new BusArrivalFragment();
                         break;
                     case R.id.trains:
-                        selectedFragment = new TrainArrivalFragment();
+                        selectedFragment = new TrainFragment();
+                        break;
+                    case R.id.traffic:
+                        selectedFragment = new TrafficIncidentFragment();
                         break;
                     case R.id.settings:
                         selectedFragment = new SettingsFragment();
@@ -87,8 +91,12 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commitAllowingStateLoss();
                 bottomNavigationView.setSelectedItemId(R.id.settings);
                 break;
+            case "Traffic Incidents":
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TrafficIncidentFragment()).commitAllowingStateLoss();
+                bottomNavigationView.setSelectedItemId(R.id.traffic);
+                break;
             default:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TrainArrivalFragment()).commitAllowingStateLoss();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TrainFragment()).commitAllowingStateLoss();
                 bottomNavigationView.setSelectedItemId(R.id.trains);
                 break;
         }
