@@ -19,9 +19,6 @@ import com.owl.travels.R;
 import com.owl.travels.adapters.ArrivalsAdapter;
 import com.owl.travels.models.GetArrivalTimes;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class TrainArrivalFragment extends Fragment {
     private Context context;
     private static int pos;
@@ -45,8 +42,8 @@ public class TrainArrivalFragment extends Fragment {
         setHasOptionsMenu(true);
         getActivity().setTitle("Train Info");
         context = getContext();
-        Spinner spinner = view.findViewById(R.id.arrivals_spinner);
-        spinner.setOnItemSelectedListener(onItemSelectedListener);
+        //Spinner spinner = view.findViewById(R.id.arrivals_spinner);
+        //spinner.setOnItemSelectedListener(onItemSelectedListener);
         recyclerView = view.findViewById(R.id.arrivals_rv);
         ArrivalsAdapter arrivalsAdapter = new ArrivalsAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -55,7 +52,7 @@ public class TrainArrivalFragment extends Fragment {
         return view;
     }
 
-    private void fetchArrivals(){
+    /*private void fetchArrivals(){
         Runnable runnable = () ->{
             try{
                 times.refreshFormBody("Buona Vista");
@@ -67,5 +64,5 @@ public class TrainArrivalFragment extends Fragment {
         ExecutorService es = Executors.newCachedThreadPool();
         es.execute(runnable);
         es.shutdown();
-    }
+    }*/
 }
