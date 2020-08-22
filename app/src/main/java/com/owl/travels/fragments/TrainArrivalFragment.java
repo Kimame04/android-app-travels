@@ -19,6 +19,10 @@ import com.owl.travels.R;
 import com.owl.travels.adapters.ArrivalsAdapter;
 import com.owl.travels.models.GetArrivalTimes;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+
 public class TrainArrivalFragment extends Fragment {
     private static Context context;
     private static int pos;
@@ -63,7 +67,11 @@ public class TrainArrivalFragment extends Fragment {
         recyclerView.setAdapter(arrivalsAdapter);
     }
 
+
     /*private void fetchArrivals(){
+=======
+    private void fetchArrivals(){
+
         Runnable runnable = () ->{
             try{
                 for (String i: list){
@@ -76,5 +84,9 @@ public class TrainArrivalFragment extends Fragment {
         ExecutorService es = Executors.newCachedThreadPool();
         es.execute(runnable);
         es.shutdown();
+
     }*/
+
+    }
+
 }
