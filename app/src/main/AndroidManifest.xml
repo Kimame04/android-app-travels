@@ -25,6 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OnboardingActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:theme="@style/Theme.Leanback.Onboarding" />
     </application>
 
 </manifest>
