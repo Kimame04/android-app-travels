@@ -11,7 +11,9 @@ import com.owl.travels.R
 import com.owl.travels.models.GetArrivalTimes
 
 class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
+
     val timeGetter= GetArrivalTimes()
+
     private var context: Context? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
@@ -21,7 +23,9 @@ class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //val info = timeGetter.trains[position]
+
         holder.stationName.text = timeGetter.stn
+
         holder.platform1.text= "Platform 1: N/A"
         holder.platform2.text="Platform 2: N/A"
         holder.platform3.text="Platform 3: N/A"
@@ -46,6 +50,8 @@ class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
         override fun onClick(view: View) {}
 
         init {
+
+
             stationName = view.findViewById(R.id.station_title)
             platform1 = view.findViewById(R.id.platform_1)
             platform2 = view.findViewById(R.id.platform_2)
@@ -75,6 +81,7 @@ class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
                     }
                 }
             }.start()
+
         }
     }
 }

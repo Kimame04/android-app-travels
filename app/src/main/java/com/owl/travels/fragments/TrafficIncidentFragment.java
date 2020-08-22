@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -23,6 +24,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.owl.travels.R;
@@ -31,7 +33,9 @@ import com.owl.travels.models.GetTrafficIncidents;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
 public class TrafficIncidentFragment extends Fragment implements OnMapReadyCallback {
+
     private GetTrafficIncidents incidents = new GetTrafficIncidents();
     private static final String url = "http://datamall2.mytransport.sg/ltaodataservice/TrafficIncidents";
     private TextView title;
@@ -45,6 +49,7 @@ public class TrafficIncidentFragment extends Fragment implements OnMapReadyCallb
         View view = inflater.inflate(R.layout.fragment_traffic_incidents, container, false);
         setHasOptionsMenu(true);
         getActivity().setTitle("Traffic Incidents");
+
         title = view.findViewById(R.id.incident_title);
         description = view.findViewById(R.id.incident_description);
         title.setText("No traffic incidents as of now.");
@@ -55,6 +60,7 @@ public class TrafficIncidentFragment extends Fragment implements OnMapReadyCallb
             mapView.onResume();
             mapView.getMapAsync(this);
         }
+
         return view;
     }
 
@@ -67,6 +73,7 @@ public class TrafficIncidentFragment extends Fragment implements OnMapReadyCallb
         Runnable runnable = () ->{
             try{
                 incidents.getService();
+
                 //if(!(incidents.getMessage() == "")) {
                     //title.setText("Vehicle Breakdown");
                     //description.setText("(29/3)18:22 Vehicle breakdown on ECP \n(towards Changi Airport) after Still Rd Sth Exit. Avoid lane 3.");
@@ -77,6 +84,9 @@ public class TrafficIncidentFragment extends Fragment implements OnMapReadyCallb
                         .position(latLng).icon(BitmapDescriptorFactory.defaultMarker()));
                 marker.setTag(latLng);
                 //}
+
+
+                System.out.println(incidents.getMessage());
 
             } catch (Exception e){
                 e.printStackTrace();
