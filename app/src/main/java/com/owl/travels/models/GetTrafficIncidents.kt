@@ -7,6 +7,8 @@ import org.jsoup.Jsoup
 public class GetTrafficIncidents(){
     public var type:String=""
     public var message:String=""
+    public var lat:String=""
+    public var long:String=""
     private val client = OkHttpClient()
 
     private var request = Request.Builder()
@@ -25,7 +27,8 @@ public class GetTrafficIncidents(){
                     val doc = Jsoup.parse(s)
                     type=doc.attr("Type")
                     message=doc.attr("Message")
-
+                    lat=doc.attr("Latitude")
+                    long=doc.attr("Longitude")
                 }
             }
         }catch(e:Exception){

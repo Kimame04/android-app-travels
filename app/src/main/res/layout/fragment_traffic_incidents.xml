@@ -17,4 +17,8 @@
         android:textSize="20sp"
         android:gravity="center"
         android:maxLines="8"/>
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/incident_maps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
