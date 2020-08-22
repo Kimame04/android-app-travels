@@ -105,6 +105,11 @@ public class MainActivity extends AppCompatActivity {
                 bottomNavigationView.setSelectedItemId(R.id.trains);
                 break;
         }
+        if (!sharedPreferences.getBoolean("onboarding_compelete",false)){
+            startActivity(new Intent(this, OnboardingActivity.class));
+            finish();
+        }
+
     }
     public static boolean isConnectedToInternet(Context context) {
         ConnectivityManager cm =

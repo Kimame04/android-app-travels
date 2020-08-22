@@ -8,6 +8,6 @@
         <item name="fontFamily">@font/lta_identity</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
+    <style name="OnboardingTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
 
 </resources>
