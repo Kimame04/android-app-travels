@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.owl.travels.R
 import com.owl.travels.models.GetArrivalTimes
 
-class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
+class ArrivalsAdapter(private val stationList:Array<String>) : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
     val timeGetter= GetArrivalTimes()
     private var context: Context? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -21,7 +21,7 @@ class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //val info = timeGetter.trains[position]
-        holder.stationName.text = timeGetter.stn
+        holder.stationName.text = stationList[position].subSequence(4,stationList[position].length)
         holder.platform1.text= "Platform 1: N/A"
         holder.platform2.text="Platform 2: N/A"
         holder.platform3.text="Platform 3: N/A"
@@ -31,7 +31,7 @@ class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return 100
+        return stationList.size
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
@@ -64,9 +64,9 @@ class ArrivalsAdapter() : RecyclerView.Adapter<ArrivalsAdapter.ViewHolder>() {
 
             Thread {
                 while (true) {
-                    var array:Array<String> = context?.resources?.getStringArray(R.array.all_stations) as Array<String>
-                    for (h in 0 until array.size){
-                        timeGetter.refreshFormBody(array[h])
+                    for (h in 0 until stationList.size){
+                        timeGetter.refreshFormBody(stationList[h].substring(0,3))
+                        print(stationList[h].substring(0,3))
                         @SuppressLint("SetTextI18n")
                         for (i in 0 until timeGetter.trains.size){
                             a[i].text = timeGetter.trains[i].second+": "+timeGetter.trains[i].first.toString()+" mins"

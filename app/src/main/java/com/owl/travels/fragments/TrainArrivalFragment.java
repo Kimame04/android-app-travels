@@ -20,15 +20,22 @@ import com.owl.travels.adapters.ArrivalsAdapter;
 import com.owl.travels.models.GetArrivalTimes;
 
 public class TrainArrivalFragment extends Fragment {
-    private Context context;
+    private static Context context;
     private static int pos;
-    private RecyclerView recyclerView;
+    private static String[] list = {};
     private GetArrivalTimes times = new GetArrivalTimes();
-
+    private static RecyclerView recyclerView;
     private Spinner.OnItemSelectedListener onItemSelectedListener = new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
-            pos = position;
+            switch(position){
+                case 0: list = getContext().getResources().getStringArray(R.array.nsl_stations);
+                break;
+                case 1: list = getContext().getResources().getStringArray(R.array.ccl_stations);break;
+                case 2: list = getContext().getResources().getStringArray(R.array.changi_stations);break;
+                case 3: list = getContext().getResources().getStringArray(R.array.ewl_stations);break;
+                case 4: list = getContext().getResources().getStringArray(R.array.tel_stations);break;
+            }
         }
 
         @Override
@@ -42,21 +49,26 @@ public class TrainArrivalFragment extends Fragment {
         setHasOptionsMenu(true);
         getActivity().setTitle("Train Info");
         context = getContext();
-        //Spinner spinner = view.findViewById(R.id.arrivals_spinner);
-        //spinner.setOnItemSelectedListener(onItemSelectedListener);
+        Spinner spinner = view.findViewById(R.id.arrivals_spinner);
+        spinner.setOnItemSelectedListener(onItemSelectedListener);
         recyclerView = view.findViewById(R.id.arrivals_rv);
-        ArrivalsAdapter arrivalsAdapter = new ArrivalsAdapter();
+        generateRecyclerView();
+        //fetchArrivals();
+        return view;
+    }
+    public static void generateRecyclerView(){
+        ArrivalsAdapter arrivalsAdapter = new ArrivalsAdapter(list);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(arrivalsAdapter);
-        return view;
     }
 
     /*private void fetchArrivals(){
         Runnable runnable = () ->{
             try{
-                times.refreshFormBody("Buona Vista");
-                times.refreshFormBody("Clementi");
+                for (String i: list){
+                    times.refreshFormBody(i.substring(0,3));
+                }
             } catch (Exception e){
                 e.printStackTrace();
             }

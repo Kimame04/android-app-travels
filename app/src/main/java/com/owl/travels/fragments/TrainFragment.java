@@ -56,6 +56,7 @@ public class TrainFragment extends Fragment {
                 generateAlertDialog(getContext(),getLayoutInflater());
                 return true;
             case R.id.menu_train_refresh:
+                TrainArrivalFragment.generateRecyclerView();
                 Snackbar.make(getView(),"Refreshed",Snackbar.LENGTH_SHORT).show();
                 return true;
             default:
