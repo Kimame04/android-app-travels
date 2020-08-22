@@ -100,9 +100,8 @@ public class OnboardingFragment extends OnboardingSupportFragment {
     @Override
     protected void onFinishFragment() {
         super.onFinishFragment();
-        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getContext())
-                .edit();
-        editor.putBoolean("onboarding_complete", true).apply();
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getContext());
+            pref.edit().putBoolean("onboarding_complete", true).apply();
         startActivity(new Intent(getContext(), MainActivity.class));
         getActivity().finish();
     }
